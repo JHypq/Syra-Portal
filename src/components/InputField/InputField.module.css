@@ -43,7 +43,6 @@
     transition: top .14s, left .14s, transform .14s, font-size .14s;
     font-size: 0.875rem;
     color: var(--color-text-secondary);
-    opacity: 0.65;
 }
 
 .field input:focus {
@@ -58,7 +57,6 @@
     left: 1.75rem;
     transform: translateY(0);
     font-size: 0.75rem;
-    opacity: 1;
 }
 
 .field input:not(:placeholder-shown) + label {

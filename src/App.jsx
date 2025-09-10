@@ -12,7 +12,9 @@ export default function App() {
   useEffect(() => {
     if (!loading) {
       const boot = document.getElementById('boot-loader');
-      if (boot) boot.remove();
+      if (!boot) return;
+      const t = setTimeout(() => boot.remove(), 500); // 500ms minimum
+      return () => clearTimeout(t);
     }
   }, [loading]);
 

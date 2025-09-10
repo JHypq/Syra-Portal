@@ -2,11 +2,11 @@ import styles from "./Login.module.css"
 import InputField from "../../components/InputField/InputField"
 import Button from "../../components/Button/Button"
 import { FaEnvelope, FaLock } from "react-icons/fa"
-import { useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { useEffect, useState } from "react"
+import { Link, Navigate, useNavigate } from "react-router-dom"
 import { supabase } from "../../lib/supabaseClient"
 
-export default function Login() {
+export default function Login({ session, loading: authLoading }) {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [formError, setFormError] = useState("");

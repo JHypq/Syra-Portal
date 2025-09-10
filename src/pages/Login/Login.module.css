@@ -1,0 +1,62 @@
+.loginWrapper {
+    flex: 1;
+    display: grid;
+    place-items: center;
+    background-color: var(--color-bg);
+}
+
+.loginCard {
+    width: 500px;
+    padding: 2rem 4rem 5rem;
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-md);
+    border-radius: var(--radius-lg);
+}
+
+.loginCard > h2 {
+    font-size: 2rem;
+    font-weight: var(--md-weight);
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+.loginCard > p {
+    color: var(--color-text);
+    line-height: 1.75;
+    margin-bottom: 2rem;
+    max-width: 300px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fieldGroup {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.fieldGroup > a {
+    align-self: end;
+    margin-top: 0.75rem;
+    font-size: 0.825rem;
+    text-decoration: none;
+    color: var(--color-primary);
+    transition: color 0.2s;
+}
+
+.fieldGroup > a:hover {
+    color: var(--color-primary-hover);
+    text-decoration: underline;
+}
+
+.fieldGroup > a:focus-visible {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: var(--focus-ring);
+}

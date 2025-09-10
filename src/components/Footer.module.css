@@ -1,0 +1,7 @@
+.footer {
+    flex-shrink: 0;
+    margin-top: auto;
+    height: 74px;
+
+    outline: 1px solid tomato;
+}

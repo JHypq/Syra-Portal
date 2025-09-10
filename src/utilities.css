@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ========== RESETS ========== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font-family: var(--font-base);
+  line-height: 1.25;
+}
+
+html, body, #root { 
+  height: 100%; 
+}
+
+/* ========== VARIABLES ========== */
+:root {
+  --control-h: 48px;              /* height control on elements */
+  /* ========== Font Variants ========== */
+  --font-base: 'Inter', system-ui, sans-serif;
+  --base-weight: 400;
+  --md-weight: 500;
+  --lg-weight: 600;
+  --xl-weight: 700;
+  /* ========== Base Backgrounds ========== */
+  --color-bg: #f9fafb;          /* app background */
+  --color-surface: #ffffff;     /* cards, panels */
+  --color-border: #d2d6e0;      /* light gray borders */
+
+  /* ========== Text Colors ========== */
+  --color-text: #1f2937;        /* main text */
+  --color-text-secondary: #6b7280; /* muted/labels */
+  --color-text-inverse: #f9fafb;   /* text on dark/colored bg */
+
+  /* ========== Brand Colors ========== */
+  --color-primary: #0F766E;
+  --color-primary-hover: #115e59;
+  --color-secondary: #2563eb;
+  --color-secondary-hover: #1e40af;
+
+  /* ========== Status Colors ========== */
+  --color-bg-success: #ECFDF5;
+  --color-text-success: #065F46;
+  --color-border-success: #34D399;
+  --color-bg-warning: #FFFBEB;
+  --color-text-warning: #92400E;
+  --color-border-warning: #FBBF24;
+  --color-bg-danger: #FEF2F2;
+  --color-text-danger: #991B1B;
+  --color-border-danger: #F87171;
+
+  /* ========== Layout Colors ========== */
+  --color-navbar-bg: #1f2937;
+  --color-navbar-text: #f9fafb;
+  --color-footer-bg: #1f2937;
+  --color-footer-text: #f9fafb;
+
+  /* ========== Other ========== */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 2px 6px rgba(0,0,0,0.15);
+  --focus-ring: 0 0 0 3px rgba(13,148,136,.25);
+}

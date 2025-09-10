@@ -1,0 +1,75 @@
+.field {
+    position: relative;
+    width: 100%;
+}
+
+.field input {
+    block-size: var(--control-h);
+    display: block;
+    width: 100%;
+    padding: 0.875rem 0.75rem 0.875rem 2.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    color: var(--color-text);
+    line-height: 1.2;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 0.75rem;
+    transform: translateY(-50%);
+    color: var(--color-text-secondary);
+    pointer-events: none;
+    font-size: 1rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+}
+
+.field label {
+    position: absolute;
+    left: 2.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    width: auto;
+    background: var(--color-surface);
+    padding: 0 0.2rem;
+    pointer-events: none;
+    transition: top .14s, left .14s, transform .14s, font-size .14s;
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    opacity: 0.65;
+}
+
+.field input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: var(--focus-ring);
+}
+
+.field input:focus + label,
+.field input:not(:placeholder-shown) + label {
+    top: -0.5rem;
+    left: 1.75rem;
+    transform: translateY(0);
+    font-size: 0.75rem;
+    opacity: 1;
+}
+
+.field input:not(:placeholder-shown) + label {
+    color: var(--color-text-secondary);
+}
+
+.field:focus-within input + label,
+.field:focus-within .icon {
+  color: var(--color-primary);
+}
+
+.field + .field {
+    margin-top: 2rem;
+}

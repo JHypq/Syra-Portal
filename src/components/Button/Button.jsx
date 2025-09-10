@@ -6,15 +6,21 @@ export default function Button({
     onClick, 
     disabled = false, 
     fullWidth = false, 
+    loading = false,
 }) {
+
+    const isDisabled = disabled || loading
+
     return (
         <button
             className={`${styles.btn} ${fullWidth ? styles.full : ""}`}
             type={type}
             onClick={onClick}
-            disabled={disabled}
+            disabled={isDisabled}
+            aria-busy={loading}
+            aria-live="polite"
         >
-            {children}
+            {loading ? <span className={styles.spinner} aria-hidden="true" /> : children}
         </button>
     )
 }

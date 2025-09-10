@@ -25,10 +25,30 @@
 }
 
 .btn:disabled {
-    opacity: 0.6;
+    opacity: 0.8;
     cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+    background: var(--color-primary);
 }
 
 .full {
     width: 100%;
+}
+
+
+.spinner {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: btn-spin .9s linear infinite;
+    vertical-align: -0.125em; /* nicer centering with text baseline */
+}
+
+@keyframes btn-spin {
+    to { transform: rotate(360deg); }
 }

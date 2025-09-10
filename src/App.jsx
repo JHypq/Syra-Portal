@@ -13,7 +13,7 @@ export default function App() {
     if (!loading) {
       const boot = document.getElementById('boot-loader');
       if (!boot) return;
-      const t = setTimeout(() => boot.remove(), 500); // 500ms minimum
+      const t = setTimeout(() => boot.remove(), 250); // 250ms minimum
       return () => clearTimeout(t);
     }
   }, [loading]);

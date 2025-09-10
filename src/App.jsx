@@ -13,10 +13,8 @@ export default function App() {
     if (!loading) {
       const boot = document.getElementById('boot-loader');
       if (!boot) return;
-      requestAnimationFrame(() => {
-        const t = setTimeout(() => boot.remove(), 150);
-        return () => clearTimeout(t);
-      });
+      const t = setTimeout(() => boot.remove(), 250); // 250ms minimum
+      return () => clearTimeout(t);
     }
   }, [loading]);
 

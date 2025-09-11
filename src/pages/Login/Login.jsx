@@ -1,7 +1,7 @@
 import styles from "./Login.module.css"
 import InputField from "../../components/InputField/InputField"
 import Button from "../../components/Button/Button"
-import { FaEnvelope, FaLock } from "react-icons/fa"
+import { FaEnvelope, FaLock, FaEye, FaEyeSlash  } from "react-icons/fa"
 import { useEffect, useState } from "react"
 import { Link, Navigate, useNavigate } from "react-router-dom"
 import { supabase } from "../../lib/supabaseClient"
@@ -11,6 +11,7 @@ export default function Login({ session, loading: authLoading }) {
     const [password, setPassword] = useState("")
     const [formError, setFormError] = useState("");
     const [loading, setLoading] = useState(false)
+    const [showPwd, setShowPwd] = useState(false);
 
     const navigate = useNavigate()
 
@@ -55,12 +56,22 @@ export default function Login({ session, loading: authLoading }) {
                             id="password"
                             name="password"
                             label="Password"
-                            type="password"
+                            type={showPwd ? "text" : "password"}
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             icon={<FaLock />}
+                            trailing={
+                                <button
+                                    type="button"
+                                    onClick={() => setShowPwd(v => !v)}
+                                    aria-label={showPwd ? "Hide password" : "Show password"}
+                                    title={showPwd ? "Hide password" : "Show password"}
+                                >
+                                    {showPwd ? <FaEyeSlash /> : <FaEye />}
+                                </button>
+                            }
                         />
-                        <Link to="#">Forgot password?</Link>
+                        <Link to="/forgot-password">Forgot password?</Link>
                     </div>
                     {formError && (
                         <div role="alert" className={styles.formError}>{formError}</div>

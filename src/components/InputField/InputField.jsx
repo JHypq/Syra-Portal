@@ -1,6 +1,6 @@
 import styles from "./InputField.module.css"
 
-export default function InputField({ id, type, name, value, onChange, label, icon }) {
+export default function InputField({ id, type, name, value, onChange, label, icon, trailing }) {
 
     return (
         <div className={styles.field}>
@@ -14,6 +14,7 @@ export default function InputField({ id, type, name, value, onChange, label, ico
                 onChange={onChange}
             />
             <label htmlFor={id}>{label}</label>
+            {trailing && <span className={styles.trailing}>{trailing}</span>}
         </div>
     )
 }

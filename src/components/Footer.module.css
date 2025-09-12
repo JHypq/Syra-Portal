@@ -1,7 +1,168 @@
 .footer {
     flex-shrink: 0;
     margin-top: auto;
-    height: 74px;
+    padding: 0 2rem;
 
-    outline: 1px solid tomato;
+    background-color: var(--color-footer-bg);
+    color: var(--color-footer-text);
+}
+
+.footerWrapper {
+    max-width: 1440px;   /* TODO: ADJUSTMENT LATER */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    row-gap: 1rem;
+    align-items: center;
+
+    border-top: 1px solid var(--color-border);
+    padding: 1.25rem 0;
+    margin-top: 1rem;
+}
+
+.logoSection {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 0.75rem;
+
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.logoIcon {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-md);
+}
+
+.logoIcon span {
+    line-height: 1;
+    font-size: 1.875rem;
+    font-weight: 900;
+}
+
+.brandName {
+    font-size: 1.125rem;
+    font-weight: var(--lg-weight);
+    line-height: 1;
+    letter-spacing: 1.3px;
+}
+
+.brandName::first-letter {
+    font-size: 1.25em;
+    font-weight: 800;
+}
+
+.socialSection {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+}
+
+.socialSection ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.socialSection a {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: var(--color-footer-text);
+    background: transparent;
+    border: 1px solid currentColor;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+    font-size: 1.125rem;
+}
+
+.socialSection a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--color-primary);
+    transform: scale(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .socialSection a,
+    .socialSection a::before {
+        transition: none;
+    }
+}
+
+.socialSection a:hover::before,
+.socialSection a:focus-visible::before {
+    transform: scale(1);
+}
+
+.socialSection a svg {
+    position: relative;
+    z-index: 1;
+}
+
+.socialSection a:hover,
+.socialSection a:focus-visible {
+    color: var(--color-text-inverse);
+    outline: none;
+}
+
+.socialSection a:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+    border-color: transparent; /* ring stands out cleanly */
+}
+
+
+
+
+
+.linkSection {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: center;
+}
+
+.linkSection ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+}
+
+.linkSection a {
+    color: var(--color-footer-text);
+    font-size: 0.875rem;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.linkSection a:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+    border-radius: var(--radius-sm);
+}
+
+.linkSection a:hover {
+    text-decoration: underline;
+    opacity: 1;
 }

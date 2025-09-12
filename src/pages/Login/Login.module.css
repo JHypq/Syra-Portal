@@ -21,9 +21,9 @@
 }
 
 .loginCard > p {
-    color: var(--color-text);
+    color: var(--color-text-secondary);
     line-height: 1.75;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     max-width: 300px;
 }
 
@@ -62,7 +62,7 @@
 }
 
 .formError {
-    margin: 1rem 0;
+    margin-bottom: 1rem;
     font-size: 0.875rem;
     color: var(--color-text-danger);
     display: flex;
@@ -76,4 +76,8 @@
     font-size: 1rem;
     color: var(--color-text-danger);
     flex-shrink: 0;
+}
+
+.form[aria-busy="true"] { 
+    cursor: progress; 
 }

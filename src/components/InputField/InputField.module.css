@@ -1,6 +1,7 @@
 .field {
     position: relative;
     width: 100%;
+    margin-top: 1.5rem;
 }
 
 .field input {
@@ -68,10 +69,6 @@
      color: var(--color-primary);
 }
 
-.field + .field {
-    margin-top: 2rem;
-}
-
 .trailing { 
     position: absolute; 
     top: 50%; 
@@ -109,7 +106,6 @@
 
 .errorText {
     margin-top: 0.375rem;
-    margin-bottom: 1.25rem;
     min-height: 1.25rem;
     font-size: 0.875rem;
     color: var(--color-text-danger);

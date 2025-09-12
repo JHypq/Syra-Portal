@@ -5,10 +5,12 @@ import Footer from "./Footer"
 
 export default function Layout() {
     const { pathname } = useLocation()
-    const isLoginPage = pathname === "/"
+    const noHeaderPaths = ["/", "/forgot-password", "/reset-password"]
+    const hideHeader = noHeaderPaths.includes(pathname)
+
     return (
         <div className={styles.siteWrapper}>
-            {!isLoginPage && <Header />}
+            {!hideHeader && <Header />}
             <main className={styles.main}>
                 <Outlet />
             </main>

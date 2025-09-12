@@ -3,8 +3,8 @@ import InputField from "../../components/InputField/InputField"
 import Button from "../../components/Button/Button"
 import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa"
 import { CgDanger } from "react-icons/cg";
-import { useEffect, useState, useRef } from "react"
-import { Link, Navigate, useNavigate } from "react-router-dom"
+import { useState, useRef } from "react"
+import { Link, useNavigate } from "react-router-dom"
 import { supabase } from "../../lib/supabaseClient"
 
 export default function Login({ session, loading: authLoading }) {
@@ -98,7 +98,7 @@ export default function Login({ session, loading: authLoading }) {
             <div className={styles.loginCard}>
                 <h2>Welcome back!</h2>
                 <p>Sign in to access your dashboard and continue your work.</p>
-                <form className={styles.form} onSubmit={onSubmit} noValidate>
+                <form className={styles.form} onSubmit={onSubmit} noValidate aria-busy={loading ? "true" : "false"}>
                     <div className={styles.fieldGroup}>
                         <InputField
                             id="email"

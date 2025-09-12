@@ -3,6 +3,8 @@ import Login from "./pages/Login/Login"
 import Dashboard from "./pages/Dashboard/Dashboard"
 import Layout from "./components/Layout"
 import ProtectedRoute from "./components/ProtectedRoute"
+import ForgotPassword from "./pages/ForgotPassword/ForgotPassword"
+import ResetPassword from "./pages/ResetPassword/ResetPassword"
 import useSession from "./hooks/useSession"
 import { useEffect } from "react";
 
@@ -25,6 +27,8 @@ export default function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={session ? <Navigate to="/dashboard" replace /> : <Login />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
           <Route element={<ProtectedRoute session={session} loading={loading} />}>
             <Route path="/dashboard" element={<Dashboard />} />
           </Route>

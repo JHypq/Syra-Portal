@@ -53,7 +53,7 @@ export default function ForgotPassword() {
                     We've sent an email to <strong>{email}</strong>, please check your inbox.
                 </p>
                 <div className={styles.footerLinks}>
-                    <Link to="/">Back to sign in</Link>
+                    <Button to="/" fullWidth>Back to sign in</Button>
                 </div>
             </div>
         </div>

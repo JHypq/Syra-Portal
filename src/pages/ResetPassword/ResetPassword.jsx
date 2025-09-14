@@ -91,7 +91,7 @@ export default function ResetPassword() {
             <div className={styles.card}>
                 <h2 className={styles.title}>Link invalid or expired</h2>
                 <p className={styles.subtitle}>Request a new reset link from the sign-in page.</p>
-                <a href="/">Back to sign in</a>
+                <Button to="/" fullWidth>Back to sign in</Button>
             </div>
             </div>
         )
@@ -103,7 +103,7 @@ export default function ResetPassword() {
             <div className={styles.card}>
                 <h2 className={styles.title}>Password updated</h2>
                 <p className={styles.subtitle}>You can now sign in with your new password.</p>
-                <a href="/">Back to sign in</a>
+                <Button to="/" fullWidth>Back to sign in</Button>
             </div>
             </div>
         )
@@ -113,7 +113,7 @@ export default function ResetPassword() {
         <div className={styles.wrapper}>
             <div className={styles.card}>
                 <h2 className={styles.title}>Set a new password</h2>
-                <p className={styles.subtitle}>Choose a strong password you haven’t used before.</p>
+                <p className={styles.subtitle_02}>Choose a strong password you haven’t used before.</p>
 
                 <form className={styles.form} onSubmit={onSubmit} noValidate aria-busy={loading ? "true" : "false"}>
                     <div className={styles.fieldGroup}>

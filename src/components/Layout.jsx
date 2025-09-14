@@ -5,7 +5,7 @@ import Footer from "./Footer"
 
 export default function Layout() {
     const { pathname } = useLocation()
-    const noHeaderPaths = ["/", "/forgot-password", "/reset-password"]
+    const noHeaderPaths = ["/", "/forgot-password", "/reset-password", "/404-not-found"]
     const hideHeader = noHeaderPaths.includes(pathname)
 
     return (

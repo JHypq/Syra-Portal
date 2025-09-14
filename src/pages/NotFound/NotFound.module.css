@@ -1,0 +1,59 @@
+.wrapper {
+    flex: 1;
+    min-height: 100%;
+    display: grid;
+    place-items: center;
+    padding: 4rem 1rem;
+    background:
+        radial-gradient(60rem 60rem at 50% -10%, rgba(15,118,110,.08), transparent),
+        var(--color-bg);
+}
+
+.content { 
+    text-align: center;
+}
+
+.code {
+    font-size: 8rem;
+    font-weight: 800;
+    letter-spacing: .04em;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(0,0,0,.12);
+    text-shadow: 0 2px 16px rgba(0,0,0,.06);
+    margin-bottom: .25rem;
+}
+
+.title { 
+    font-size: 2rem; 
+    margin-bottom: .5rem; 
+}
+
+.copy  { 
+    color: var(--color-text-secondary); 
+    margin-bottom: 1.5rem; 
+}
+
+.actions {
+    display: flex;
+    gap: .75rem; 
+    justify-content: center; 
+    flex-wrap: wrap;
+}
+
+.secondary {
+    align-self: center;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    padding: .5rem .75rem;
+    border-radius: var(--radius-sm);
+}
+
+.secondary:hover { 
+    text-decoration: underline; 
+}
+
+.secondary:focus-visible { 
+    outline: none; 
+    box-shadow: var(--focus-ring); 
+}

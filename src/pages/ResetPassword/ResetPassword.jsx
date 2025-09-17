@@ -61,7 +61,7 @@ export default function ResetPassword() {
             return 
         }
         if (password!==confirm) {
-            setErrors(x => ({ ...x, confirm:  "Passwords do not match." }));
+            setErrors(x => ({ ...x, confirm:  "Passwords do not match." }))
             return 
         }
 

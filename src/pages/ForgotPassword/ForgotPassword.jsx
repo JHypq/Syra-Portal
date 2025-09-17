@@ -12,7 +12,7 @@ export default function ForgotPassword() {
     const [loading, setLoading] = useState(false)
     const [sent, setSent] = useState(false)
 
-    const isValidEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(v);
+    const isValidEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(v)
 
     function onEmailChange(e) {
         setEmail(e.target.value)
@@ -83,7 +83,7 @@ export default function ForgotPassword() {
                         <Button type="submit" fullWidth loading={loading}> Send reset link </Button>
 
                     <div className={styles.footerLinks}>
-                        <Link to="/">Back to sign in</Link>
+                        <Link className={styles.footerLink} to="/" >Back to sign in</Link>
                     </div>
                 </form>
             </div>

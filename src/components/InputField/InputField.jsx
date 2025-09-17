@@ -1,6 +1,6 @@
 import styles from "./InputField.module.css"
-import { CgDanger } from "react-icons/cg";
-import { forwardRef } from "react";
+import { CgDanger } from "react-icons/cg"
+import { forwardRef } from "react"
 
 const InputField = forwardRef(function InputField(
     { id, type, name, value, onChange, label, icon, trailing, error = false, errorText = "" },
@@ -34,4 +34,4 @@ const InputField = forwardRef(function InputField(
     )
 })
 
-export default InputField;
+export default InputField

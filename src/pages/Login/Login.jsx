@@ -2,7 +2,7 @@ import styles from "./Login.module.css"
 import InputField from "../../components/InputField/InputField"
 import Button from "../../components/Button/Button"
 import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa"
-import { CgDanger } from "react-icons/cg";
+import { CgDanger } from "react-icons/cg"
 import { useState, useRef } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { supabase } from "../../lib/supabaseClient"
@@ -10,74 +10,74 @@ import { supabase } from "../../lib/supabaseClient"
 export default function Login({ session, loading: authLoading }) {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [formError, setFormError] = useState("");
+    const [formError, setFormError] = useState("")
     const [loading, setLoading] = useState(false)
-    const [showPwd, setShowPwd] = useState(false);
-    const [errors, setErrors] = useState({ email: "", password: "", form: "" });
+    const [showPwd, setShowPwd] = useState(false)
+    const [errors, setErrors] = useState({ email: "", password: "", form: "" })
 
     const navigate = useNavigate()
 
-    const pwdRef = useRef(null);
+    const pwdRef = useRef(null)
 
-    const isValidEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(v);
+    const isValidEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(v)
 
     function mapAuthError(err) {
-        const msg = (err?.message || "").toLowerCase();
+        const msg = (err?.message || "").toLowerCase()
 
         // Invalid credentials
         if (msg.includes("invalid login credentials")) {
-            return "Wrong email or password.";
+            return "Wrong email or password."
         }
 
         // Rate limit
         if (err?.status === 429 || msg.includes("too many request")) {
-            return "Too many attempts. Please wait a moment and try again.";
+            return "Too many attempts. Please wait a moment and try again."
         }
 
         // Disabled / banned / blocked accounts
         if (err?.status === 403 || /disabled|blocked|banned/.test(msg)) {
-            return "This account has been disabled. Contact your administrator.";
+            return "This account has been disabled. Contact your administrator."
         }
 
         // Fallback: network/unknown
-        return "We’re having trouble connecting. Please try again.";
+        return "We’re having trouble connecting. Please try again."
     }
 
     async function onSubmit(e) {
-        e.preventDefault();
+        e.preventDefault()
 
-        const next = { email: "", password: "" };
+        const next = { email: "", password: "" }
 
-        if (!email.trim()) next.email = "Enter your email.";
-        else if (!isValidEmail(email)) next.email = "Enter a valid email address.";
+        if (!email.trim()) next.email = "Enter your email."
+        else if (!isValidEmail(email)) next.email = "Enter a valid email address."
 
-        if (!password) next.password = "Enter your password.";
+        if (!password) next.password = "Enter your password."
 
         if (next.email || next.password) {
-            setErrors(next);
-            setFormError("");
-            return;
+            setErrors(next)
+            setFormError("")
+            return
         }
 
-        setLoading(true);
+        setLoading(true)
         try {
             const { error } = await supabase.auth.signInWithPassword({ email, password })
 
             if (error) {
                 setErrors({ email: "", password: "" })
                 setPassword("")
-                setFormError(mapAuthError(error));
+                setFormError(mapAuthError(error))
                 pwdRef.current?.focus()
                 return
             }
 
-            setErrors({ email: "", password: "" });
-            setFormError("");
-            navigate("/dashboard", { replace: true });
+            setErrors({ email: "", password: "" })
+            setFormError("")
+            navigate("/dashboard", { replace: true })
         } catch {
-            setFormError("We’re having trouble connecting. Please try again.");
+            setFormError("We’re having trouble connecting. Please try again.")
         } finally {
-            setLoading(false);
+            setLoading(false)
         }
     }
 

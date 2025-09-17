@@ -1,17 +1,8 @@
-import { supabase } from "../../lib/supabaseClient"
+import styles from "./Dashboard.module.css"
 
 export default function Dashboard() {
-    async function handleSignOut() {
-        const { error } = await supabase.auth.signOut()
-        if (error) {
-            console.error("Error signing out:", error.message)
-        }
-    }
 
     return (
-        <>
-            <h1>Dashboard Page Here</h1>
-            <button onClick={handleSignOut}>Sign Out</button>
-        </>
+        <h1>Dashboard Page Here</h1>
     )
 }

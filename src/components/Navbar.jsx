@@ -74,9 +74,11 @@ export default function Navbar() {
                 </button>
             </div>
 
-            <NavItem to="/dashboard" icon={AiFillHome} label="Dashboard" />
-            <NavItem to="/people" icon={BsPeopleFill} label="People" />
-            <NavItem to="/settings" icon={RiSettings4Fill} label="Team Settings" />
+            <div className={styles.scrollArea}>
+                <NavItem to="/dashboard" icon={AiFillHome} label="Dashboard" />
+                <NavItem to="/people" icon={BsPeopleFill} label="People" />
+                <NavItem to="/settings" icon={RiSettings4Fill} label="Team Settings" />
+            </div>
 
             <div className={styles.userWrap} ref={userRef}>
                 <button

@@ -1,9 +1,9 @@
 .sidebar {
-    --btn: 48px;
+    --btn: 44px;
     --icon: 24px;
     --px: 8px;
     --w-collapsed: 64px;
-    --w-open: 260px;
+    --w-open: 280px;
 
     position: sticky;
     top: 0.5rem;
@@ -18,6 +18,7 @@
     transition: width 180ms ease;
     align-items: center;
     overflow: hidden;
+    z-index: 100;
 }
 
 .sidebar[data-open="true"] {
@@ -104,6 +105,16 @@
 
 /* ========== Nav Items ========== */
 
+.scrollArea {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    display: grid;
+    align-content: start;
+    gap: 8px;
+}
+
 .item {
     border-radius: var(--radius-md);
     color: var(--color-text-inverse);
@@ -134,7 +145,8 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 6px var(--px);
+    padding: 0 var(--px);
+    min-height: var(--btn); 
 }
 
 .active {

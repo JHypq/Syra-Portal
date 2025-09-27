@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { LuPanelLeft } from "react-icons/lu"
 import { AiFillHome } from "react-icons/ai"
-import { BsPeopleFill } from "react-icons/bs"
+import { LuUsers } from "react-icons/lu"
 import { RiSettings4Fill } from "react-icons/ri"
 import NavItem from "../components/NavItem/NavItem"
 import styles from "./Navbar.module.css"
@@ -76,7 +76,7 @@ export default function Navbar() {
 
             <div className={styles.scrollArea}>
                 <NavItem to="/dashboard" icon={AiFillHome} label="Dashboard" />
-                <NavItem to="/people" icon={BsPeopleFill} label="People" />
+                <NavItem to="/employees" icon={LuUsers} label="Employees" />
                 <NavItem to="/settings" icon={RiSettings4Fill} label="Team Settings" />
             </div>
 

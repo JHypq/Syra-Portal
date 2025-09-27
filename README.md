@@ -1,12 +1,48 @@
-# React + Vite
+# Syra Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Syra Portal** is a portfolio project: a modern **HR and employee management dashboard** built with React and Vite.  
+It demonstrates front-end engineering, UI/UX design, and project structure — not intended for real-world HR use.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Current features
 
-## Expanding the ESLint configuration
+### 🖥️ Dashboard
+- Placeholder for high-level metrics
+- Will later show KPIs, summaries and notifications
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 👥 Employees
+- Authentication with integrated backend (supabase auth)
+  - Forgot password
+  - Reset password
+  - Login
+- Employee directory with mock data
+- Details include:
+  - Contract type (full-time, part-time, contract)
+  - Work mode (onsite, hybrid, remote)
+  - Salary vs. wage with accurate £GBP formatting
+  - Department, role, manager ID & name
+  - Start date, contract end (expired contracts highlighted)
+  - DOB, mobile, email (clickable links)
+- UI/UX features:
+  - Responsive, scrollable table
+  - Row hover/focus states
+  - Table head buttons (visual sort/filter)
+  - Search bar
+  - Rows-per-page dropdown
+  - Edit / Terminate actions
+
+### ⚙️ Team Settings
+- Placeholder for managing organization/team-wide settings
+- Future: role management, permissions, departments
+
+---
+
+## 🛠️ Tech stack
+
+- [React 18](https://react.dev/) + [Vite](https://vitejs.dev/)  
+- [React Router](https://reactrouter.com/)  
+- [CSS Modules](https://github.com/css-modules/css-modules)  
+- [React Icons](https://react-icons.github.io/react-icons/)  
+
+---

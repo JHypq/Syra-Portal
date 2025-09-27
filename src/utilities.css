@@ -18,6 +18,7 @@ html, body, #root {
 
 /* ========== VARIABLES ========== */
 :root {
+  --row-py: .625rem;
   --control-h: 48px;              /* height control on elements */
   --header-h: 60px;
   --sidebar-w: 60px;

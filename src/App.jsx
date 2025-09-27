@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import Login from "./pages/Login/Login"
 import Dashboard from "./pages/Dashboard/Dashboard"
-import People from "./pages/People/People"
+import Employees from "./pages/Employees/Employees"
 import NotFound from "./pages/NotFound/NotFound"
 import Layout from "./components/Layout"
 import ProtectedRoute from "./components/ProtectedRoute"
@@ -33,7 +33,7 @@ export default function App() {
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route element={<ProtectedRoute session={session} loading={loading} />}>
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/people" element={<People />} />
+            <Route path="/employees" element={<Employees />} />
           </Route>
           <Route path="/404-not-found" element={<NotFound />} />
           <Route path="*" element={<Navigate to="/404-not-found" replace />} />

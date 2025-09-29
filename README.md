@@ -5,6 +5,11 @@ It demonstrates **front-end engineering, UI/UX design, accessibility, and projec
 
 ---
 
+## 🌐 Live demo
+👉 [View Syra Portal Live](https://syra-portal.netlify.app/)
+
+---
+
 ## ✨ Current features
 
 ### 🔐 Authentication (Supabase)
